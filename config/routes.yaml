@@ -1,0 +1,12 @@
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+games:
+  path: /games
+  defaults: { _controller: 'App\Controller\GameController::games' }
+
+# first, run composer req annotations
+#controllers:
+#    resource: ../src/Controller/
+#    type: annotation
