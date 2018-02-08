@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jsaky
- * Date: 11/17/2017
- * Time: 9:41 PM
- */
-
 namespace App\Controller;
 
+use App\Model\Game;
 use Symfony\Component\HttpFoundation\Response;
 
 class GameController
@@ -15,9 +9,9 @@ class GameController
     public function games()
     {
         $response = new Response();
-        $response->setContent(json_encode(array(
-            'data' => 123,
-        )));
+        $game = new Game();
+        $game->SetName("my game");
+        $response->setContent(json_encode($game->GetName()));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
